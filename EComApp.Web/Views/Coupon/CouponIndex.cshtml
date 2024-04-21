@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    
+}
+@model List<CouponDto>
+<div class="row">
+    <div class="col-12">
+        <div class="row">
+            <div class="d-flex justify-content-end">
+                <a asp-action="CreateCoupon" class="btn btn-primary">Create</a>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Coupon Code</th>
+                    <th scope="col">Discount Amount</th>
+                    <th scope="col">Min Amount</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.couponId</th>
+                        <td>@item.couponCode</td>
+                        <td>@item.discountAmount</td>
+                        <td>@item.minAmount</td>
+                        <td><a asp-action="delete" asp-route-id="@item.couponId" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

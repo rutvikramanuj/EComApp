@@ -1,0 +1,35 @@
+﻿@model CouponDto
+<div class="row">
+    <div class="col-12">
+        <form asp-action="CreateNewCoupon">
+
+            <div class="row">
+                <div class="col-5">
+                    <label>Coupon Code</label>
+                    <input asp-for="couponCode" class="form-control form-control-sm" />
+                        <span asp-validation-for="couponCode" class="text-danger" />
+                </div>
+            </div>
+                <div class="row mt-3">
+                    <div class="col-5">
+                    <label>Discount Amount</label>
+                    <input asp-for="discountAmount" class="form-control form-control-sm" />
+                    <span asp-validation-for="discountAmount" class="text-danger"/>
+                    </div>
+                </div>
+            <div class="row mt-3">
+                    <div class="col-5">
+                    <label>Min Amount</label>
+                    <input asp-for="minAmount" class="form-control form-control-sm" />
+                    <span asp-validation-for="minAmount" class="text-danger"/>
+                    </div>
+                </div>
+            <div class="row mt-3">
+                    <div class="col-2">
+                    <input type="submit" class="btn btn-primary" value="Create" />
+                    </div>
+                </div>
+
+        </form>
+    </div>
+</div>
